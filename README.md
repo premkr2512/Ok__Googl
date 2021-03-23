@@ -44,3 +44,24 @@ def take_command():
     
     ########################################  Function to speak ######################################################### 
     
+if __name__ == '__main__':
+    #wish_me()
+    speak(" how u doing sir ")
+    while True:
+        query = take_command().lower()
+        if "wikipedia" in query:
+            speak("searching wikipedia ")
+            query = query.replace("wikipedia"," ")
+            result = wikipedia.summary(query,sentences= 2)
+            speak("According to wikipedia")
+            #print(result)
+            speak(result)
+        elif 'youtube' in query:
+            webbrowser.open("http://youtube.com")
+        elif 'google' in query:
+            webbrowser.open("http://google.com")
+        elif "adafruit" in query:
+            webbrowser.open("https://io.adafruit.com/")
+            
+   ############################## adding some of task done by ok_google#########################################
+    
