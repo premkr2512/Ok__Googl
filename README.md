@@ -62,6 +62,34 @@ if __name__ == '__main__':
             webbrowser.open("http://google.com")
         elif "adafruit" in query:
             webbrowser.open("https://io.adafruit.com/")
-            
-   ############################## adding some of task done by ok_google#########################################
-    
+        #elif "gmail" in query:
+            #    speak("what should i say")
+            #    content = take_command()
+            #    send_mail(content)
+        elif "open code " in query:
+            path = "C:\\Users\\welcome\\AppData\\Local\\Programs\\Microsoft VS Code\\Code"
+            os.startfile(path)
+        elif "play music" in query:
+            music_dir = "C:\\Users\\Public\\Music\\Sample Music"
+            song = os.listdir(music_dir)
+            os.startfile(os.path.join(music_dir,song[0]))
+        #elif "lets talk" in query:
+         #   speak("why not ")
+          #  chat.main()
+        elif "menu" in query:
+            c1 = -1
+            c2=-1
+            Current_day = day[date.today().weekday()]
+            for i in menu['day']:
+                c1+=1
+                if i.lower() == Current_day.lower():
+                    for j in range(len(time1)):
+                        c2+=1
+                        t1 = time1[j]
+                       # wish_me()
+                        s = menu.iat[c1,j+1]
+                        print(s)
+                        speak("in" + rutine[j])
+                        #time.sleep(0.5)
+                        speak(s)
+          ################################## some more role for computer ############################# 
