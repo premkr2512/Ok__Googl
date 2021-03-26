@@ -73,9 +73,9 @@ if __name__ == '__main__':
             music_dir = "C:\\Users\\Public\\Music\\Sample Music"
             song = os.listdir(music_dir)
             os.startfile(os.path.join(music_dir,song[0]))
-        #elif "lets talk" in query:
-         #   speak("why not ")
-          #  chat.main()
+        elif "lets talk" in query:
+            speak("why not ")
+            chat.main()
         elif "menu" in query:
             c1 = -1
             c2=-1
@@ -92,4 +92,12 @@ if __name__ == '__main__':
                         speak("in" + rutine[j])
                         #time.sleep(0.5)
                         speak(s)
-          ################################## some more role for computer ############################# 
+        ################################## some more role for computer ############################# 
+          else:
+            try:
+                res = app.query(query)
+                print(next(res.results).text)
+                speak(next(res.results).text)
+            except:
+                print("Internet problems")
+       
