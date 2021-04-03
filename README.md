@@ -1,32 +1,33 @@
 # Ok__Googl
 talkin computer
 
-import speech_recognition as sr
-import datetime
-import wikipedia
-import pyttsx3
-import webbrowser
-import random
-import os
-import chat
-import wolframalpha
+import speech_recognition as sr     //this is used to recognise your voice thgrough microphone in your laptop or computer . For this you have to install pyAudio to enable your 
+                                    computer to listen to your voice .
+import datetime                     // for date - time purpose .
+import wikipedia                    // first install . it will extract data from wikipedia directly
+import pyttsx                      // to convert text to speech 
+import webbrowser                  // first install it . It will allow python to search anything through your default webbrowser
+import random                      // to generate some random number
+import os                         
+import chat                        // its a oython file that i have created . and after that i just imported it another file of python.
+import wolframalpha                //it is a app that will go=ive you some kind of extra latest thing like Temperature , about some of importent personalities , math stuff etc
 try:
-    app = wolframalpha.Client("5L4Q6Y-HJEU3VPA4P")
+    app = wolframalpha.Client("API")                 // taking authentication from the app 
 except Exception:
-    print("impore=t Error")
-#Text To Speech
+    print("import Error")
 
-engine = pyttsx3.init('sapi5')
-voices = engine.getProperty('voices')
-#print(voices)
-engine.setProperty('voice',voices[0].id)
+#Text To Speech
+engine = pyttsx3.init('sapi5')                      // initialising my pyttsx3 
+voices = engine.getProperty('voices')               //taking voice as its property
+#print(voices)                                      // i can print voice name thats on your laptop or pc
+engine.setProperty('voice',voices[0].id)             // taking first voice from my computer
 #################################################### done all setups for jarvish###################################
 
 
-def speak(audio):
-    engine.say(audio)
+def speak(audio):                                   // function that will take a string as an argument and speak the same string in a sound you choose.
+    engine.say(audio)                               //  call speak
     engine.runAndWait()
-def wish_me():
+def wish_me():                                      // it will wish me according to time now
     time= int(datetime.now().hour)
     if 0 <= time >12:
         speak("good morning sir ")
@@ -37,16 +38,16 @@ def wish_me():
     speak("i am your assistance sir , how can i help you")
 
 
-def take_command():
+def take_command():                                 // taking command that you want to search or execute
     speak("write your query sir ")
-    query = str(input("write your query sir"))
+    query = str(input("write your query sir"))       // taking as an input
     return query
     
     ########################################  Function to speak ######################################################### 
     
 if __name__ == '__main__':
-    #wish_me()
-    speak(" how u doing sir ")
+    #wish_me()                                          //wishing me
+    speak(" how u doing sir ")                          //asking me how i am 
     while True:
         query = take_command().lower()
         if "wikipedia" in query:
