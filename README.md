@@ -93,6 +93,75 @@ if __name__ == '__main__':
                         #time.sleep(0.5)
                         speak(s)
         ################################## some more role for computer ############################# 
+        elif "song" in query:
+            query2 = take_command2().lower()
+            if"hollywood" in query2:
+                file = os.path.join(directory, query2)
+                music_dir=os.listdir(file)
+                m0 = -1
+                while m <=len(music_dir):
+                    m0+=1
+                    music = random.choice(music_dir)
+                    if music.endswith(".mp3"):
+                        file_path = file +"\\" + music
+                        pygame.mixer.music.load(str(file_path))
+                        print(music)
+                        pygame.mixer.music.play()
+                        speak("playing Hollywood song")
+                        print("playing hollywood song")
+                        while pygame.mixer.music.get_busy()==True:
+                            continue
+                        #print(music_dir)
+                        #playsound(d)
+            elif "ayushman_Khurana" in query2:
+                file = os.path.join(directory, query2)
+                music_dir=os.listdir(file)
+                m = -1
+                while m <=len(music_dir):
+                    m+=1
+                    music = random.choice(music_dir)
+                    if music.endswith(".mp3"):
+                        file_path = file +"\\" + music
+                        pygame.mixer.music.load(str(file_path))
+                        print(music)
+                        pygame.mixer.music.play()
+                        speak("playing ayushman khurana song")
+                        print("playing ayushman khurana song")
+                        while pygame.mixer.music.get_busy()==True:
+                            continue
+            elif "honey_singh" in query2:
+                file = os.path.join(directory, query2)
+                music_dir=os.listdir(file)
+                m = -1
+                while m <=len(music_dir):
+                    m+=1
+                    music = random.choice(music_dir)
+                    if music.endswith(".mp3"):
+                        file_path = file +"\\" + music
+                        pygame.mixer.music.load(str(file_path))
+                        print(music)
+                        pygame.mixer.music.play()
+                        speak("playing honey singh song")
+                        print("playing honey singh song")
+                        while pygame.mixer.music.get_busy()==True:
+                            continue
+            elif "jubin_nautyal" in query2:
+                file = os.path.join(directory, query2)
+                music_dir=os.listdir(file)
+                m = -1
+                while m <=len(music_dir):
+                    m+=1
+                    music = random.choice(music_dir)
+                    if music.endswith(".mp3"):
+                        file_path = file +"\\" + music
+                        pygame.mixer.music.load(str(file_path))
+                        print(music)
+                        pygame.mixer.music.play()
+                        speak("playing jubin nautyal song")
+                        print("playing jubin nautyal  song")
+                        while pygame.mixer.music.get_busy()==True:
+                            continue
+################################################################SONG according to mood #########################################################3
           else:
             try:
                 res = app.query(query)
